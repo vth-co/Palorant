@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import EditScreenInfo from '@/src/components/EditScreenInfo';
 
-export default function TabOneScreen() {
+export default function MenuScreen() {
   return (
     <View style={styles.container}>
       {/* <Text style={styles.title}>Hi Hi</Text>
