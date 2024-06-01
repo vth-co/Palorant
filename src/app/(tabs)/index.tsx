@@ -9,11 +9,10 @@ export default function MenuScreen() {
       {/* <Text style={styles.title}>Hi Hi</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/index.tsx" /> */}
-      <Image 
-        source={require('./palorant.png')}
-        // source={{uri: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww'}}
-        style={styles.image}
-      />
+      <View>
+
+      <Image source={require('./palorant.png')} style={styles.image}/>
+        </View>
       <Text style={styles.title}>
         Meet Palorant
       </Text>
@@ -38,9 +37,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#101828'
   },
   image: {
-    width: 500,
-    height: 500,
-    backgroundColor: 'white',
+    width: 400,
+    height: 400,
   },
   title: {
     fontSize: 20,
