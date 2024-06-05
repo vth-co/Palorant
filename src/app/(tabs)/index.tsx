@@ -11,7 +11,7 @@ export default function MenuScreen() {
       <EditScreenInfo path="app/(tabs)/index.tsx" /> */}
       <View>
 
-      <Image source={require('./palorant.png')} style={styles.image}/>
+      <Image source={require('../../../assets/images/palorant.png')} style={styles.image}/>
         </View>
       <Text style={styles.title}>
         Meet Palorant
@@ -20,10 +20,19 @@ export default function MenuScreen() {
         A safe space for female VALORANT players to meet and play with other female players
       </Text>
       <Link href={'/sign-up'} asChild>
-        <Button text='Create an account' />
+        <Button text='Create an account' 
+        containerStyle={{
+          width: '90%',
+        }}
+        />
       </Link>
       <Link  href={'/sign-in'}  asChild >
-        <Button text='Log in' />
+        <Button text='Log in' 
+        containerStyle={{
+          backgroundColor: '#1D2939',
+          width: '90%',
+        }}
+        />
       </Link>
     </View>
   );
@@ -41,16 +50,17 @@ const styles = StyleSheet.create({
     height: 400,
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
     color: Colors.dark.tint
   },
   description: {
-    fontSize: 15,
-    color: Colors.dark.tint,
+    fontSize: 20,
+    color: 'lightgray',
     textAlign: 'center',
-    paddingHorizontal: 75,
-    marginBottom: 50
+    paddingHorizontal: 40,
+    marginBottom: 50,
+    marginTop: 20,
   },
   separator: {
     marginVertical: 30,

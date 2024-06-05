@@ -4,14 +4,16 @@ import { forwardRef } from 'react';
 
 type ButtonProps = {
   text: string;
+  textStyle?: object;
+  containerStyle?: object;
 } & React.ComponentPropsWithoutRef<typeof Pressable>;
 
 
 const Button = forwardRef<View | null, ButtonProps>(
-  ({ text, ...pressableProps }, ref) => {
+  ({ text, textStyle, containerStyle, ...pressableProps }, ref) => {
     return (
-      <Pressable ref={ref} {...pressableProps} style={styles.container}>
-        <Text style={styles.text}>{text}</Text>
+      <Pressable ref={ref} {...pressableProps} style={[styles.container, containerStyle]}>
+        <Text style={[styles.text, textStyle]}>{text}</Text>
       </Pressable>
     );
   }
