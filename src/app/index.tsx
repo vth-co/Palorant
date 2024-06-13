@@ -11,7 +11,7 @@ export default function MenuScreen() {
       <EditScreenInfo path="app/(tabs)/index.tsx" /> */}
       <View>
 
-      <Image source={require('../../../assets/images/palorant.png')} style={styles.image}/>
+      <Image source={require('../../assets/images/palorant.png')} style={styles.image}/>
         </View>
       <Text style={styles.title}>
         Meet Palorant

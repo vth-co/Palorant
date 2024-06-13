@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "palorant",
+    "name": "Palorant",
     "slug": "palorant",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "palorant",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
