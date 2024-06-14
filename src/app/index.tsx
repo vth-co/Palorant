@@ -11,7 +11,7 @@ import Button from "@/src/components/Button";
 import Colors from "@/src/constants/Colors";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function MenuScreen() {
+export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{ height: "100%" }}>
