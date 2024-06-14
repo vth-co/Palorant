@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import React, { useState } from "react";
 import Button from "@/src/components/Button";
 import Colors from "../../constants/Colors";
@@ -17,50 +17,49 @@ const SignInScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Stack.Screen options={{ title: "Sign in" }} />
+        <Stack.Screen options={{ title: "Sign in" }} />
+      <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <TextInput
+          value={email}
+          onChangeText={setEmail}
+          placeholder="Username or email"
+          placeholderTextColor="lightgray"
+          textColor="white"
+          style={styles.input}
+        />
 
-      <TextInput
-        value={email}
-        onChangeText={setEmail}
-        placeholder="Username or email"
-        placeholderTextColor="lightgray"
-
-        textColor="white"
-
-        style={styles.input}
-      />
-
-      {/* <MaterialCommunityIcons 
+        {/* <MaterialCommunityIcons 
         name={showPassword ? 'eye-off' : 'eye'} 
         size={24} 
         color="#aaa"
         onPress={toggleShowPassword} 
-      /> */}
-      <TextInput
-        secureTextEntry={!showPassword}
-        value={password}
-        onChangeText={setPassword}
-        placeholder="Password"
-        placeholderTextColor="lightgray"
-        textColor="white"
-        style={styles.input}
-        right={
-          <TextInput.Icon
-            icon={showPassword ? "eye" : "eye-off"}
-            onPress={toggleShowPassword}
-          />
-        }
-      />
-      <Text>Forgot your password?</Text>
+        /> */}
+        <TextInput
+          secureTextEntry={!showPassword}
+          value={password}
+          onChangeText={setPassword}
+          placeholder="Password"
+          placeholderTextColor="lightgray"
+          textColor="white"
+          style={styles.input}
+          right={
+            <TextInput.Icon
+              icon={showPassword ? "eye" : "eye-off"}
+              onPress={toggleShowPassword}
+            />
+          }
+        />
+        <Text>Forgot your password?</Text>
 
-      <Button text="Log in" />
+        <Button text="Log in" />
 
-      <View>
-        <Text>Don't have an account yet?</Text>
-        <Link href="/sign-up" style={styles.textButton}>
-          Create an account
-        </Link>
-      </View>
+        <View>
+          <Text>Don't have an account yet?</Text>
+          <Link href="/sign-up" style={styles.textButton}>
+            Create an account
+          </Link>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -68,23 +67,22 @@ const SignInScreen = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    justifyContent: 'center',
+    justifyContent: "center",
     flex: 1,
-    backgroundColor: '#101828'
-
+    backgroundColor: "#101828",
   },
   label: {
-    color: 'gray',
+    color: "gray",
   },
   input: {
     marginTop: 5,
     marginBottom: 20,
-    backgroundColor: '#1D2939',
+    backgroundColor: "#1D2939",
     marginHorizontal: 10,
   },
   textButton: {
-    alignSelf: 'center',
-    fontWeight: 'bold',
+    alignSelf: "center",
+    fontWeight: "bold",
     color: Colors.light.tint,
     marginVertical: 10,
   },

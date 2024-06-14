@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Colors from '../constants/Colors';
 import { forwardRef } from 'react';
 
@@ -12,9 +12,12 @@ type ButtonProps = {
 const Button = forwardRef<View | null, ButtonProps>(
   ({ text, textStyle, containerStyle, ...pressableProps }, ref) => {
     return (
-      <Pressable ref={ref} {...pressableProps} style={[styles.container, containerStyle]}>
+      // <Pressable ref={ref} {...pressableProps} style={[styles.container, containerStyle]}>
+      //   <Text style={[styles.text, textStyle]}>{text}</Text>
+      // </Pressable>
+      <TouchableOpacity ref={ref} {...pressableProps} style={[styles.container, containerStyle]}>
         <Text style={[styles.text, textStyle]}>{text}</Text>
-      </Pressable>
+      </TouchableOpacity>
     );
   }
 );
