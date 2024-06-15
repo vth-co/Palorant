@@ -26,21 +26,21 @@ const FormField: React.FC<FormFieldProps> = ({
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-      <View  className="h-16 px-4 my-2 mx-2 bg-gray-800 rounded-2xl focus:border-secondary flex flex-row items-center">
+      <View  className="h-[55px] px-4 my-2 mx-5 bg-gray-800 rounded-lg focus:border-secondary flex flex-row items-center">
         <TextInput
-          className="flex-1 bg-gray-800 text-white"
+          className="flex-1 bg-gray-800 text-white text-base h-full justify-center"
           value={value}
           placeholder={placeholder}
           placeholderTextColor="#98A2B3"
           onChangeText={handleChangeText}
           secureTextEntry={
-            (placeholder === "Password" || placeholder === "ConfirmPassword") &&
+            (placeholder === "Password" || placeholder === "Confirm Password") &&
             !showPassword
           }
           {...props}
         />
 
-        {(placeholder === "Password" || placeholder === "ConfirmPassword") && (
+        {(placeholder === "Password" || placeholder === "Confirm Password") && (
           <MaterialCommunityIcons
             name={showPassword ? "eye-off" : "eye"}
             size={24}
@@ -52,33 +52,4 @@ const FormField: React.FC<FormFieldProps> = ({
   );
 };
 
-// const styles = StyleSheet.create({
-//   container: {
-//     padding: 20,
-//     justifyContent: "center",
-//     flex: 1,
-//     backgroundColor: "#101828",
-//     height: "100%",
-//   },
-//   label: {
-//     color: "gray",
-//   },
-//   input: {
-//     marginTop: 5,
-//     marginBottom: 20,
-//     backgroundColor: "#1D2939",
-//     marginHorizontal: 10,
-//   },
-//   textButton: {
-//     alignSelf: "center",
-//     fontWeight: "bold",
-//     color: 'white',
-//     marginVertical: 10,
-//   },
-//   textDivider: {
-//     textAlign: "center",
-//     color: "gray",
-//     fontSize: 15,
-//   },
-// });
 export default FormField;

@@ -8,19 +8,37 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import Button from "@/src/components/Button";
-import Colors from "../../constants/Colors";
 import { Link, Stack } from "expo-router";
-import { TextInput } from "react-native-paper";
 import SocialMediaButtons from "@/src/components/SocialMediaButtons";
 import FormField from "@/src/components/FormField";
+import CustomButton from "@/src/components/CustomButton";
 
 const SignInScreen = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-  const [loading, setLoading] = useState(false);
+  // const { setUser, setIsLogged } = useGlobalContext();
 
+  const [isSubmitting, setSubmitting] = useState(false);
+  // const submit = async () => {
+  //   if (form.username === "" || form.email === "" || form.password === "") {
+  //     Alert.alert("Error", "Please fill in all fields");
+  //   }
+
+  //   setSubmitting(true);
+  //   try {
+  //     const result = await createUser(form.email, form.password, form.username);
+  //     setUser(result);
+  //     setIsLogged(true);
+
+  //     router.replace("/home");
+  //   } catch (error) {
+  //     Alert.alert("Error", error.message);
+  //   } finally {
+  //     setSubmitting(false);
+  //   }
+  // };
   return (
     <SafeAreaView className="flex-1  justify-center bg-[#101828]">
       <Stack.Screen options={{ title: "Log in" }} />
@@ -43,7 +61,12 @@ const SignInScreen = () => {
         handleChangeText={(e) => setForm({ ...form, password: e })}
       />
       <Text className="text-white">Forgot your password?</Text>
-      <Button className="mt-10" text="Log in" />
+      <CustomButton
+            title="Log in"
+            // handlePress={submit}
+            containerStyles="mt-7"
+            isLoading={isSubmitting}
+          />
       <View
         style={{
           flexDirection: "row",
