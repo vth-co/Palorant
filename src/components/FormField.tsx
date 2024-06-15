@@ -26,12 +26,12 @@ const FormField: React.FC<FormFieldProps> = ({
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-      <View>
+      <View  className="h-16 px-4 my-2 mx-2 bg-gray-800 rounded-2xl focus:border-secondary flex flex-row items-center">
         <TextInput
-        //   style={styles.input}
+          className="flex-1 bg-gray-800 text-white"
           value={value}
           placeholder={placeholder}
-          placeholderTextColor="#39393c"
+          placeholderTextColor="#98A2B3"
           onChangeText={handleChangeText}
           secureTextEntry={
             (placeholder === "Password" || placeholder === "ConfirmPassword") &&

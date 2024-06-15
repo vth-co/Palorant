@@ -13,16 +13,16 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className="flex-1 items-center justify-center bg-[#101828]">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View>
           <Image
             source={require("../../assets/images/palorant.png")}
-            style={styles.image}
+            className="w-96 h-96"
           />
         </View>
-        <Text style={styles.title}>Meet Palorant</Text>
-        <Text style={styles.description}>
+        <Text className="text-3xl font-bold text-white text-center mt-4">Meet Palorant</Text>
+        <Text className="text-xl text-white text-center px-10 my-5">
           A safe space for female VALORANT players to meet and play with other
           female players
         </Text>
@@ -47,35 +47,3 @@ export default function App() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#101828",
-  },
-  image: {
-    width: 400,
-    height: 400,
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: Colors.dark.tint,
-    textAlign: "center",
-  },
-  description: {
-    fontSize: 20,
-    color: "lightgray",
-    textAlign: "center",
-    paddingHorizontal: 40,
-    marginBottom: 50,
-    marginTop: 20,
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});
