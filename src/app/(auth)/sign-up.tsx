@@ -56,9 +56,9 @@ const SignUpScreen = () => {
         value={form.password}
         handleChangeText={(e) => setForm({ ...form, password: e })}
       />
-      <Text>Must be at least 8 characters</Text>
-      <Text>Contains at least one letter and one number</Text>
-      <Text>Includes upper and lower case letters</Text>
+      <Text className="text-secondary-400">Must be at least 8 characters</Text>
+      <Text className="text-secondary-400">Contains at least one letter and one number</Text>
+      <Text className="text-secondary-400">Includes upper and lower case letters</Text>
       <FormField
         placeholder="Confirm Password"
         value={form.confirmPassword}
@@ -88,11 +88,11 @@ const SignUpScreen = () => {
             textAlign: "center",
           }}
         >
-          By creating an account, you agree to our
+          By creating an account, you agree to our {''}
           <Link href={"/terms-of-service"} className="text-[#BA99FF]">
             Terms of Service
           </Link>
-          and
+          {''} and {''}
           <Link href={"/privacy-policy"} className="text-[#BA99FF]">
             Privacy Policy.
           </Link>

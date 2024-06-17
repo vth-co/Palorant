@@ -45,7 +45,7 @@ const SignInScreen = () => {
       <View >
         <Image
           source={require("../../../assets/images/logo.png")}
-           className="w-[220px] h-[56px] mb-10 ml-2"
+           className="w-[220px] h-[56px] mb-10 ml-5"
         />
       </View>
 
@@ -60,7 +60,7 @@ const SignInScreen = () => {
         value={form.password}
         handleChangeText={(e) => setForm({ ...form, password: e })}
       />
-      <Text className="text-white">Forgot your password?</Text>
+      <Text className="ml-5 mt-2 text-secondary-400">Forgot your password?</Text>
       <CustomButton
             title="Log in"
             // handlePress={submit}
@@ -78,25 +78,25 @@ const SignInScreen = () => {
           style={{
             flex: 1,
             height: 1,
-            backgroundColor: "gray",
+            backgroundColor: "#2B3647",
             marginHorizontal: 10,
           }}
         />
         <View>
-          <Text style={styles.textDivider}>or continue with</Text>
+          <Text className="text-secondary-400">or log in with</Text>
         </View>
         <View
           style={{
             flex: 1,
             height: 1,
-            backgroundColor: "gray",
+            backgroundColor: "#2B3647",
             marginHorizontal: 10,
           }}
         />
       </View>
       <SocialMediaButtons />
-      <View className="mt-20 flex flex-row justify-center space-x-1">
-        <Text className="text-white">Don't have an account yet?</Text>
+      <View className="mt-20 flex flex-row justify-center">
+        <Text className="text-secondary-400">Don't have an account yet? {''}</Text>
         <Link href="/sign-up" className="text-[#BA99FF]">
           Create an account
         </Link>
@@ -115,12 +115,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#1D2939",
     marginHorizontal: 10,
   },
-  // textButton: {
-  //   alignSelf: "center",
-  //   fontWeight: "bold",
-  //   color: Colors.light.tint,
-  //   marginVertical: 10,
-  // },
   textDivider: {
     textAlign: "center",
     color: "gray",
