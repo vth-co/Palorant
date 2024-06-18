@@ -19,7 +19,7 @@ export default function App() {
         <View>
           <Image
             source={require("../../assets/images/palorant.png")}
-            className="w-96 h-96"
+            className="w-full h-96"
           />
         </View>
         <Text className="text-3xl font-bold text-white text-center mt-4">

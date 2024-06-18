@@ -1,22 +1,37 @@
 import { useState } from "react";
 import { Link, Stack } from "expo-router";
-import { Text, View } from "react-native";
+import { Alert, Text, View } from "react-native";
 import SocialMediaButtons from "@/src/components/SocialMediaButtons";
-import { Divider } from "@rneui/themed";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FormField from "@/src/components/FormField";
 import CustomButton from "@/src/components/CustomButton";
+import { supabase } from "@/src/lib/supabase";
 
 const SignUpScreen = () => {
   // const { setUser, setIsLogged } = useGlobalContext();
 
-  const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+  const [loading, setLoading] = useState(false);
+
+  // const signUpWithEmail = async () => {
+
+  // }
+
+  async function signUpWithEmail() {
+    setLoading(true);
+    // const { error } = await supabase.auth.signUp({
+    //   email: form.email,
+    //   password: form.password,
+    // });
+
+    // if (error) Alert.alert(error.message)
+    setLoading(false);
+  }
 
   // const submit = async () => {
   //   if (form.username === "" || form.email === "" || form.password === "") {
@@ -57,42 +72,36 @@ const SignUpScreen = () => {
         handleChangeText={(e) => setForm({ ...form, password: e })}
       />
       <Text className="text-secondary-400">Must be at least 8 characters</Text>
-      <Text className="text-secondary-400">Contains at least one letter and one number</Text>
-      <Text className="text-secondary-400">Includes upper and lower case letters</Text>
+      <Text className="text-secondary-400">
+        Contains at least one letter and one number
+      </Text>
+      <Text className="text-secondary-400">
+        Includes upper and lower case letters
+      </Text>
       <FormField
         placeholder="Confirm Password"
         value={form.confirmPassword}
         handleChangeText={(e) => setForm({ ...form, confirmPassword: e })}
       />
-      {/* <Button text="Create account" /> */}
       <CustomButton
         title="Create account"
-        // handlePress={submit}
+        handlePress={signUpWithEmail}
         containerStyles="mt-7"
-        isLoading={isSubmitting}
+        isLoading={loading}
       />
-      <View className="flex-row items-center my-6">
-        <View className="flex-1 h-px bg-gray-300 mx-2" />
-        <View>
-          <Text className="text-secondary-400">or continue with</Text>
-        </View>
-        <View className="flex-1 h-px bg-gray-300 mx-2" />
+      <View className="flex-row items-center my-10">
+        <View className="flex-1 h-px bg-[#2B3647] mx-2" />
+        <Text className="text-secondary-400">or continue with</Text>
+        <View className="flex-1 h-px bg-[#2B3647] mx-2" />
       </View>
       <SocialMediaButtons />
-      <View>
-        <Text
-          style={{
-            color: "lightgray",
-            marginHorizontal: 40,
-            marginVertical: 30,
-            textAlign: "center",
-          }}
-        >
-          By creating an account, you agree to our {''}
+      <View className="px-12 mt-10">
+        <Text className="text-white text-center">
+          By creating an account, you agree to our {""}
           <Link href={"/terms-of-service"} className="text-[#BA99FF]">
             Terms of Service
           </Link>
-          {''} and {''}
+          {""} and {""}
           <Link href={"/privacy-policy"} className="text-[#BA99FF]">
             Privacy Policy.
           </Link>
@@ -101,35 +110,5 @@ const SignUpScreen = () => {
     </SafeAreaView>
   );
 };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     padding: 10,
-//     flex: 1,
-//     backgroundColor: "#101828",
-//     paddingTop: 30,
-//   },
-//   label: {
-//     color: "gray",
-//   },
-//   input: {
-//     marginTop: 5,
-//     marginBottom: 20,
-//     backgroundColor: "#1D2939",
-//     marginHorizontal: 10,
-//     borderRadius: 10,
-//   },
-//   textButton: {
-//     alignSelf: "center",
-//     fontWeight: "bold",
-//     color: Colors.light.tint,
-//     marginVertical: 10,
-//   },
-//   textDivider: {
-//     textAlign: "center",
-//     color: "gray",
-//     fontSize: 15,
-//   },
-// });
 
 export default SignUpScreen;
