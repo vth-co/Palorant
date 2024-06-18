@@ -11,10 +11,10 @@ const SignUpScreen = () => {
   // const { setUser, setIsLogged } = useGlobalContext();
 
   const [form, setForm] = useState({
-    username: "",
+    // username: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    // confirmPassword: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -24,12 +24,14 @@ const SignUpScreen = () => {
 
   async function signUpWithEmail() {
     setLoading(true);
-    // const { error } = await supabase.auth.signUp({
-    //   email: form.email,
-    //   password: form.password,
-    // });
+    const { error } = await supabase.auth.signUp({
+      // username: form.username,
+      email: form.email,
+      password: form.password,
+      // confirmPassword: form.confirmPassword
+    });
 
-    // if (error) Alert.alert(error.message)
+    if (error) Alert.alert(error.message)
     setLoading(false);
   }
 
@@ -61,11 +63,11 @@ const SignUpScreen = () => {
         handleChangeText={(e) => setForm({ ...form, email: e })}
         keyboardType="email-address"
       />
-      <FormField
+      {/* <FormField
         placeholder="Username"
         value={form.username}
         handleChangeText={(e) => setForm({ ...form, username: e })}
-      />
+      /> */}
       <FormField
         placeholder="Password"
         value={form.password}
@@ -78,11 +80,11 @@ const SignUpScreen = () => {
       <Text className="text-secondary-400">
         Includes upper and lower case letters
       </Text>
-      <FormField
+      {/* <FormField
         placeholder="Confirm Password"
         value={form.confirmPassword}
         handleChangeText={(e) => setForm({ ...form, confirmPassword: e })}
-      />
+      /> */}
       <CustomButton
         title="Create account"
         handlePress={signUpWithEmail}
