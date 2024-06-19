@@ -1,7 +1,7 @@
 import { useAuth } from "@/src/providers/AuthProvider";
 import { Redirect, Stack } from "expo-router";
 
-export default function AuthLayout() {
+export default function OnBoardLayout() {
 
   const {session } = useAuth();
 
@@ -13,13 +13,13 @@ export default function AuthLayout() {
     <>
       <Stack>
         <Stack.Screen
-          name="sign-in"
+          name="pageRiotId"
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name="sign-up"
+          name="pageRole"
           options={{
             headerShown: false,
           }}

@@ -11,4 +11,3 @@ const pageRole = () => {
 
 export default pageRole
 
-const styles = StyleSheet.create({})

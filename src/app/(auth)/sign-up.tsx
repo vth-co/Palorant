@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Stack } from "expo-router";
+import { Link, Stack, router } from "expo-router";
 import { Alert, Text, View } from "react-native";
 import SocialMediaButtons from "@/src/components/SocialMediaButtons";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -31,7 +31,11 @@ const SignUpScreen = () => {
       // confirmPassword: form.confirmPassword
     });
 
-    if (error) Alert.alert(error.message)
+    if (error) {
+      Alert.alert(error.message);
+    } else {
+      router.push('pageRiotId');
+    }
     setLoading(false);
   }
 
