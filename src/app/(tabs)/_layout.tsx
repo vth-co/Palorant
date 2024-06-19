@@ -1,6 +1,6 @@
 import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Link, Tabs } from "expo-router";
+import { Link, Redirect, Tabs } from "expo-router";
 import { Image, Pressable } from "react-native";
 
 import Colors from "@/src/constants/Colors";
@@ -9,6 +9,7 @@ import { useClientOnlyValue } from "@/src/components/useClientOnlyValue";
 import { View } from "@/src/components/Themed";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useAuth } from "@/src/providers/AuthProvider";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -18,18 +19,13 @@ function TabBarIcon(props: {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
 }
 
-// const TabIcon = () => {
-//   return (
-//     <View>
-//       <Image
-//         source={}
-//       />
-//     </View>
-//   )
-// }
-
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const { session } = useAuth();
+
+  if (!session) {
+    return <Redirect href={'/'} />;
+  }
 
   return (
     <Tabs
@@ -136,27 +132,6 @@ export default function TabLayout() {
           ),
         }}
       />
-      {/* <Tabs.Screen
-        name="forum"
-        options={{
-          title: 'Forum',
-          tabBarIcon: ({ color }) => <TabBarIcon name="group" color={color} />,
-        }}
-      /> */}
-      {/* <Tabs.Screen
-        name="messages"
-        options={{
-          title: 'Messages',
-          tabBarIcon: ({ color }) => <TabBarIcon name="group" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: 'Profile',
-          tabBarIcon: ({ color }) => <TabBarIcon name="group" color={color} />,
-        }}
-      /> */}
     </Tabs>
   );
 }
