@@ -12,9 +12,9 @@ export default function App() {
     return <ActivityIndicator />;
   }
 
-  if (!session) {
-    return <Redirect href={'/sign-in'} />;
-  }
+  // if (!session) {
+  //   return <Redirect href={'/sign-in'} />;
+  // }
 
   return (
     <SafeAreaView className="flex-1 items-center justify-center bg-[#101828]">

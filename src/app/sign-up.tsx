@@ -34,9 +34,9 @@ const SignUpScreen = () => {
     if (error) {
       Alert.alert(error.message);
     } else {
-      router.push('pageRiotId');
+      router.push('/onboard');
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   // const submit = async () => {
@@ -60,7 +60,7 @@ const SignUpScreen = () => {
 
   return (
     <SafeAreaView className="flex-1  justify-center bg-[#101828]">
-      <Stack.Screen options={{ title: "Join Palorant" }} />
+      {/* <Stack.Screen options={{ headerShown: false }} /> */}
       <FormField
         placeholder="Email"
         value={form.email}

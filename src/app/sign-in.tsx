@@ -45,10 +45,10 @@ const SignInScreen = () => {
   
   return (
     <SafeAreaView className="flex-1 justify-center bg-[#101828] py-10">
-      <Stack.Screen options={{ title: "Log in" }} />
+      {/* <Stack.Screen options={{ title: "Log in" }} /> */}
       <View>
         <Image
-          source={require("../../../assets/images/logo.png")}
+          source={require("../../assets/images/logo.png")}
           className="w-[220px] h-[56px] mb-10 ml-5"
         />
       </View>

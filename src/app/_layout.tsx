@@ -57,8 +57,39 @@ function RootLayoutNav() {
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+          {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="modal" options={{ presentation: "modal" }} /> */}
+          <Stack.Screen
+            name="sign-in"
+            options={{
+              title: "Log in",
+              headerStyle: {
+                backgroundColor: "#101828",
+              },
+              headerTintColor: '#D0D5DD',
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+            }}
+          />
+          <Stack.Screen
+            name="sign-up"
+            options={{
+              headerShown: false,
+              title: "Join Palorant",
+              headerStyle: {
+                backgroundColor: "#101828",
+              },
+              headerTintColor: '#D0D5DD',
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+            }}
+          />
+          <Stack.Screen 
+            name="onboard"
+            options={{
+              headerShown: false,
+            }}
+          />
         </Stack>
       </AuthProvider>
     </ThemeProvider>
