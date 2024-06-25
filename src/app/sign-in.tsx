@@ -1,10 +1,16 @@
 import { View, Text, SafeAreaView, Image, Alert } from "react-native";
 import React, { useState } from "react";
 import { Link, Stack } from "expo-router";
-import SocialMediaButtons from "@/src/components/SocialMediaButtons";
 import FormField from "@/src/components/FormField";
 import CustomButton from "@/src/components/CustomButton";
 import { supabase } from "@/src/lib/supabase";
+import AltLoginButtons from "../components/AltLoginButtons/AltLoginButtons";
+import AppleSVG from '../../assets/images/socialMedia/apple.svg';
+import GoogleSVG from '../../assets/images/socialMedia/google.svg';
+import TwitterSVG from '../../assets/images/socialMedia/twitter.svg';
+import TwitterIcon from "../components/AltLoginButtons/TwitterIcon";
+import GoogleIcon from "../components/AltLoginButtons/GoogleIcon";
+import AppleIcon from "../components/AltLoginButtons/AppleIcon";
 
 const SignInScreen = () => {
   const [form, setForm] = useState({
@@ -77,7 +83,12 @@ const SignInScreen = () => {
         <Text className="text-secondary-400">or log in with</Text>
         <View className="flex-1 h-px bg-[#2B3647] mx-2" />
       </View>
-      <SocialMediaButtons />
+      {/* <SocialMediaButtons /> */}
+      <View className="mb-10 flex-row justify-center">
+      <AltLoginButtons Icon={AppleIcon} />
+      <AltLoginButtons Icon={GoogleIcon} />
+      <AltLoginButtons Icon={TwitterIcon} />
+      </View>
       <View className="flex flex-row justify-center mt-20">
         <Text className="text-secondary-400">
           Don't have an account yet? {""}
