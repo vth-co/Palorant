@@ -30,7 +30,7 @@ const index = () => {
       />
       <CustomButton
        title='Next'
-       handlePress={() => router.push('/pageRole')}
+       handlePress={() => router.push('/onboard/pageRole')}
        />
     </SafeAreaView>
   )

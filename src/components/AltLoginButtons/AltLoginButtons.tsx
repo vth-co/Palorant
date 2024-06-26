@@ -4,9 +4,8 @@ import React from "react";
 
 const AltLoginButtons = ({ Icon }) => {
   return (
-    <TouchableOpacity className="px-5 ">
+    <TouchableOpacity className="px-2">
       <Icon
-        
       />
     </TouchableOpacity>
   );

@@ -5,7 +5,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { supabase } from "@/lib/supabase";
 import FormField from "@/components/FormField";
 import CustomButton from "@/components/CustomButton";
-import SocialMediaButtons from "@/components/SocialMediaButtons";
+import AltLoginButtons from "@/components/AltLoginButtons/AltLoginButtons";
+import TwitterIcon from "../components/AltLoginButtons/TwitterIcon";
+import GoogleIcon from "../components/AltLoginButtons/GoogleIcon";
+import AppleIcon from "../components/AltLoginButtons/AppleIcon";
 
 
 const SignUpScreen = () => {
@@ -101,9 +104,13 @@ const SignUpScreen = () => {
         <Text className="text-secondary-400">or continue with</Text>
         <View className="flex-1 h-px bg-[#2B3647] mx-2" />
       </View>
-      <SocialMediaButtons />
+      <View className="mb-10 flex-row justify-center">
+      <AltLoginButtons Icon={AppleIcon} />
+      <AltLoginButtons Icon={GoogleIcon} />
+      <AltLoginButtons Icon={TwitterIcon} />
+      </View>
       <View className="px-12 mt-10">
-        <Text className="text-black text-center">
+        <Text className="text-white text-center">
           By creating an account, you agree to our {""}
           <Link href={"/terms-of-service"} className="text-[#BA99FF]">
             Terms of Service
