@@ -11,9 +11,9 @@ export default function App() {
   //   return <ActivityIndicator />;
   // }
 
-  if (!session) {
-    return <Redirect href={'/onboard'} />;
-  }
+  // if (!session) {
+  //   return <Redirect href={'/onboard'} />;
+  // }
 
   return (
     <SafeAreaView className="flex-1 items-center justify-center bg-[#101828] p-5">

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import React, { useState } from "react";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -14,33 +14,40 @@ const index = () => {
   // const [loading, setLoading]
 
   return (
-    <SafeAreaView className="flex-1 bg-[#101828] p-5">
-      <Text className="text-white text-3xl font-bold">Welcome to Palorant</Text>
-      <Text className="text-secondary-400">What's your in-game name?</Text>
-      <View className="flex flex-row">
-        <FormField
-          placeholder="Riot ID"
-          value={form.riotId}
-          handleChangeText={(e) => setForm({ ...form, riotId: e })}
-          containerStyles="w-4/5"
-        />
-        <FormField
-          placeholder="#TAG"
-          value={form.tag}
-          handleChangeText={(e) => setForm({ ...form, tag: e })}
-          containerStyles="w-1/5"
-        />
-      </View>
-      <Text className="text-secondary-400">
-        By default, your Riot ID will only be visible to friends. This can be
-        changed in account settings.
-      </Text>
-      <CustomButton
-        title="Next"
-        handlePress={() => router.push("/onboard/pageRole")}
-        containerStyles="mt-7"
-      />
-    </SafeAreaView>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <SafeAreaView className="flex-1 bg-[#101828] p-5">
+        <Text className="text-white text-3xl font-bold">
+          Welcome to Palorant
+        </Text>
+        <Text className="text-secondary-400 text-xl mt-3">
+          What's your in-game name?
+        </Text>
+        <View className="flex-row mt-10">
+          <FormField
+            placeholder="Riot ID"
+            value={form.riotId}
+            handleChangeText={(e) => setForm({ ...form, riotId: e })}
+            otherStyles="w-2/3 mr-2"
+          />
+          <FormField
+            placeholder="#TAG"
+            value={form.tag}
+            handleChangeText={(e) => setForm({ ...form, tag: e })}
+            otherStyles="w-1/3"
+          />
+        </View>
+        <Text className="text-secondary-400 mr-5">
+          By default, your Riot ID will only be visible to friends. This can be
+          changed in account settings.
+        </Text>
+        <View className="absolute bottom-20 left-5">
+          <CustomButton
+            title="Next"
+            handlePress={() => router.push("/onboard/pageRole")}
+          />
+        </View>
+      </SafeAreaView>
+    </TouchableWithoutFeedback>
   );
 };
 

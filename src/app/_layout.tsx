@@ -74,7 +74,6 @@ function RootLayoutNav() {
           <Stack.Screen
             name="sign-up"
             options={{
-              headerShown: false,
               title: "Join Palorant",
               headerStyle: {
                 backgroundColor: "#101828",
