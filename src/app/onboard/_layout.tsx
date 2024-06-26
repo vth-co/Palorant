@@ -21,7 +21,13 @@ export default function OnBoardLayout() {
         <Stack.Screen
           name="pageRole"
           options={{
-            headerShown: false,
+            title: "",
+            headerStyle: {
+              backgroundColor: "#101828",
+            },
+            headerTintColor: '#D0D5DD',
+            headerShadowVisible: false,
+            headerBackTitleVisible: false,
           }}
         />
         <Stack.Screen

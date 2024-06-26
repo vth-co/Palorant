@@ -2,14 +2,13 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 
 
-const AltLoginButtons = ({ Icon }) => {
+const CircleButton = ({ Icon }) => {
   return (
-    <TouchableOpacity className="px-3">
+    <TouchableOpacity className="p-4 bg-secondary-800 rounded-full mr-2">
       <Icon
       />
     </TouchableOpacity>
   );
 };
 
-export default AltLoginButtons;
-
+export default CircleButton;

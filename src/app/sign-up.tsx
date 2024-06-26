@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { Link, router } from "expo-router";
-import { Alert, Keyboard, Text, TouchableWithoutFeedback, View } from "react-native";
+import {
+  Alert,
+  Keyboard,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { supabase } from "@/lib/supabase";
 import FormField from "@/components/FormField";
 import CustomButton from "@/components/CustomButton";
-import AltLoginButtons from "@/components/AltLoginButtons/AltLoginButtons";
 import TwitterIcon from "../components/AltLoginButtons/TwitterIcon";
 import GoogleIcon from "../components/AltLoginButtons/GoogleIcon";
 import AppleIcon from "../components/AltLoginButtons/AppleIcon";
+import CircleButton from "@/components/CircleButton";
 
 const SignUpScreen = () => {
   const [form, setForm] = useState({
@@ -105,9 +111,9 @@ const SignUpScreen = () => {
           <View className="flex-1 h-px bg-[#2B3647] mx-2" />
         </View>
         <View className="mb-10 flex-row justify-center">
-          <AltLoginButtons Icon={AppleIcon} />
-          <AltLoginButtons Icon={GoogleIcon} />
-          <AltLoginButtons Icon={TwitterIcon} />
+          <CircleButton Icon={AppleIcon} />
+          <CircleButton Icon={GoogleIcon} />
+          <CircleButton Icon={TwitterIcon} />
         </View>
         <View className="px-10 mt-10">
           <Text className="text-white text-center">

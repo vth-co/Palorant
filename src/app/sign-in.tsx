@@ -12,10 +12,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { supabase } from "@/lib/supabase";
 import FormField from "@/components/FormField";
 import CustomButton from "@/components/CustomButton";
-import AltLoginButtons from "@/components/AltLoginButtons/AltLoginButtons";
 import TwitterIcon from "../components/AltLoginButtons/TwitterIcon";
 import GoogleIcon from "../components/AltLoginButtons/GoogleIcon";
 import AppleIcon from "../components/AltLoginButtons/AppleIcon";
+import CircleButton from "@/components/CircleButton";
 
 const SignInScreen = () => {
   const [form, setForm] = useState({
@@ -64,7 +64,7 @@ const SignInScreen = () => {
         {/* <Stack.Screen options={{ headerShown: false }} /> */}
         <Image
           source={require("../../assets/images/logo.png")}
-          className="w-[220px] h-[56px] mb-10 ml-5"
+          className="w-[220px] h-[56px] mb-10"
         />
         <FormField
           placeholder="Email"
@@ -95,9 +95,9 @@ const SignInScreen = () => {
           <View className="flex-1 h-px bg-[#2B3647] mx-2" />
         </View>
         <View className="flex-row justify-center mb-24">
-          <AltLoginButtons Icon={AppleIcon} />
-          <AltLoginButtons Icon={GoogleIcon} />
-          <AltLoginButtons Icon={TwitterIcon} />
+          <CircleButton Icon={AppleIcon} />
+          <CircleButton Icon={GoogleIcon} />
+          <CircleButton Icon={TwitterIcon} />
         </View>
         <View className="flex flex-row justify-center ">
           <Text className="text-secondary-400">

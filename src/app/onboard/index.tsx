@@ -19,10 +19,10 @@ const index = () => {
         <Text className="text-white text-3xl font-bold">
           Welcome to Palorant
         </Text>
-        <Text className="text-secondary-400 text-xl mt-3">
+        <Text className="text-secondary-400 text-xl mt-2">
           What's your in-game name?
         </Text>
-        <View className="flex-row mt-10">
+        <View className="flex-row mt-5">
           <FormField
             placeholder="Riot ID"
             value={form.riotId}
