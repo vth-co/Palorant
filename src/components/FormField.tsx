@@ -13,7 +13,7 @@ const FormField = ({
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <View className="h-[55px] px-4 my-2 mx-5 bg-gray-800 rounded-lg focus:border-secondary flex flex-row items-center">
+    <View className="h-[55px] px-4 my-2  bg-gray-800 rounded-lg focus:border-secondary flex flex-row items-center">
       <TextInput
         className="flex-1 bg-gray-800 text-white text-base h-full justify-center"
         value={value}

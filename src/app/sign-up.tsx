@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Stack, router } from "expo-router";
+import { Link, router } from "expo-router";
 import { Alert, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { supabase } from "@/lib/supabase";
@@ -9,7 +9,6 @@ import AltLoginButtons from "@/components/AltLoginButtons/AltLoginButtons";
 import TwitterIcon from "../components/AltLoginButtons/TwitterIcon";
 import GoogleIcon from "../components/AltLoginButtons/GoogleIcon";
 import AppleIcon from "../components/AltLoginButtons/AppleIcon";
-
 
 const SignUpScreen = () => {
   // const { setUser, setIsLogged } = useGlobalContext();
@@ -63,7 +62,7 @@ const SignUpScreen = () => {
   // };
 
   return (
-    <SafeAreaView className="flex-1  justify-center bg-[#101828]">
+    <SafeAreaView className="flex-1 justify-center bg-[#101828] p-5">
       {/* <Stack.Screen options={{ headerShown: false }} /> */}
       <FormField
         placeholder="Email"
@@ -109,7 +108,7 @@ const SignUpScreen = () => {
       <AltLoginButtons Icon={GoogleIcon} />
       <AltLoginButtons Icon={TwitterIcon} />
       </View>
-      <View className="px-12 mt-10">
+      <View className="px-10 mt-10">
         <Text className="text-white text-center">
           By creating an account, you agree to our {""}
           <Link href={"/terms-of-service"} className="text-[#BA99FF]">

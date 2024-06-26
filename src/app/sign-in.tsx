@@ -2,9 +2,6 @@ import { View, Text, SafeAreaView, Image, Alert } from "react-native";
 import React, { useState } from "react";
 import { Link, Stack } from "expo-router";
 import AltLoginButtons from "../components/AltLoginButtons/AltLoginButtons";
-import AppleSVG from '../../assets/images/socialMedia/apple.svg';
-import GoogleSVG from '../../assets/images/socialMedia/google.svg';
-import TwitterSVG from '../../assets/images/socialMedia/twitter.svg';
 import TwitterIcon from "../components/AltLoginButtons/TwitterIcon";
 import GoogleIcon from "../components/AltLoginButtons/GoogleIcon";
 import AppleIcon from "../components/AltLoginButtons/AppleIcon";
@@ -50,7 +47,7 @@ const SignInScreen = () => {
   // };
   
   return (
-    <SafeAreaView className="flex-1 justify-center py-10 bg-[#101828]">
+    <SafeAreaView className="flex-1 justify-center bg-[#101828] p-5">
       {/* <Stack.Screen options={{ title: "Log in" }} /> */}
       <View>
         <Image
@@ -75,7 +72,7 @@ const SignInScreen = () => {
       <CustomButton
         title="Log in"
         handlePress={signInWithEmail}
-        containerStyles="mt-7"
+        containerStyles="px-10"
         isLoading={loading}
       />
       <View className="flex-row items-center my-10">
@@ -83,7 +80,6 @@ const SignInScreen = () => {
         <Text className="text-secondary-400">or log in with</Text>
         <View className="flex-1 h-px bg-[#2B3647] mx-2" />
       </View>
-      {/* <SocialMediaButtons /> */}
       <View className="mb-10 flex-row justify-center">
       <AltLoginButtons Icon={AppleIcon} />
       <AltLoginButtons Icon={GoogleIcon} />

@@ -4,7 +4,7 @@ import React from "react";
 
 const AltLoginButtons = ({ Icon }) => {
   return (
-    <TouchableOpacity className="px-2">
+    <TouchableOpacity className="px-3">
       <Icon
       />
     </TouchableOpacity>
@@ -13,4 +13,3 @@ const AltLoginButtons = ({ Icon }) => {
 
 export default AltLoginButtons;
 
-const styles = StyleSheet.create({});
