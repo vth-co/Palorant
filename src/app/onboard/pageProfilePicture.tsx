@@ -10,5 +10,3 @@ const pageProfilePicture = () => {
 }
 
 export default pageProfilePicture
-
-const styles = StyleSheet.create({})

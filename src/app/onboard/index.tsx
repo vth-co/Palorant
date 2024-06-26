@@ -2,8 +2,8 @@ import { StyleSheet, Text } from 'react-native'
 import React, { useState } from 'react'
 import { router } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import CustomButton from '@/src/components/CustomButton'
-import FormField from '@/src/components/FormField'
+import FormField from '@/components/FormField'
+import CustomButton from '@/components/CustomButton'
 
 const index = () => {
 

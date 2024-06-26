@@ -1,9 +1,6 @@
 import { View, Text, SafeAreaView, Image, Alert } from "react-native";
 import React, { useState } from "react";
 import { Link, Stack } from "expo-router";
-import FormField from "@/src/components/FormField";
-import CustomButton from "@/src/components/CustomButton";
-import { supabase } from "@/src/lib/supabase";
 import AltLoginButtons from "../components/AltLoginButtons/AltLoginButtons";
 import AppleSVG from '../../assets/images/socialMedia/apple.svg';
 import GoogleSVG from '../../assets/images/socialMedia/google.svg';
@@ -11,6 +8,9 @@ import TwitterSVG from '../../assets/images/socialMedia/twitter.svg';
 import TwitterIcon from "../components/AltLoginButtons/TwitterIcon";
 import GoogleIcon from "../components/AltLoginButtons/GoogleIcon";
 import AppleIcon from "../components/AltLoginButtons/AppleIcon";
+import { supabase } from "@/lib/supabase";
+import FormField from "@/components/FormField";
+import CustomButton from "@/components/CustomButton";
 
 const SignInScreen = () => {
   const [form, setForm] = useState({
@@ -50,7 +50,7 @@ const SignInScreen = () => {
   // };
   
   return (
-    <SafeAreaView className="flex-1 justify-center bg-[#101828] py-10">
+    <SafeAreaView className="flex-1 justify-center py-10 bg-[#101828]">
       {/* <Stack.Screen options={{ title: "Log in" }} /> */}
       <View>
         <Image

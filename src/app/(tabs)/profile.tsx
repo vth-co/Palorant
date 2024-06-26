@@ -1,6 +1,6 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { supabase } from '@/src/lib/supabase'
+import { supabase } from '@/lib/supabase'
 
 const profile = () => {
   return (

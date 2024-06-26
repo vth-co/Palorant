@@ -11,4 +11,3 @@ const pageHabits = () => {
 
 export default pageHabits
 
-const styles = StyleSheet.create({})

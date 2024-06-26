@@ -1,4 +1,4 @@
-import { useAuth } from "@/src/providers/AuthProvider";
+import { useAuth } from "@/providers/AuthProvider";
 import { StackActions } from "@react-navigation/native";
 import { Redirect, Stack } from "expo-router";
 

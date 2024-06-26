@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link, Stack, router } from "expo-router";
 import { Alert, Text, View } from "react-native";
-import SocialMediaButtons from "@/src/components/SocialMediaButtons";
 import { SafeAreaView } from "react-native-safe-area-context";
-import FormField from "@/src/components/FormField";
-import CustomButton from "@/src/components/CustomButton";
-import { supabase } from "@/src/lib/supabase";
+import { supabase } from "@/lib/supabase";
+import FormField from "@/components/FormField";
+import CustomButton from "@/components/CustomButton";
+import SocialMediaButtons from "@/components/SocialMediaButtons";
+
 
 const SignUpScreen = () => {
   // const { setUser, setIsLogged } = useGlobalContext();
@@ -102,7 +103,7 @@ const SignUpScreen = () => {
       </View>
       <SocialMediaButtons />
       <View className="px-12 mt-10">
-        <Text className="text-white text-center">
+        <Text className="text-black text-center">
           By creating an account, you agree to our {""}
           <Link href={"/terms-of-service"} className="text-[#BA99FF]">
             Terms of Service
