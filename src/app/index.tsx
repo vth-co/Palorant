@@ -20,10 +20,10 @@ export default function App() {
     <SafeAreaView className="flex-1 items-center justify-center bg-[#101828]">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View>
-          {/* <Image
+          <Image
             source={require("../../assets/images/palorant.png")}
             className="w-96 h-96"
-          /> */}
+          />
         </View>
         <Text className="text-3xl font-bold text-center mt-4">
           Meet Palorant

@@ -8,7 +8,7 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["assets/*"]
     },
-    "types": ["nativewind/types"]
+    // "types": ["nativewind/types"]
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
