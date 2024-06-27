@@ -1,6 +1,4 @@
 {
-    "git.ignoreLimitWarning": true,
-    "cSpell.words": [
-        "supabase"
-    ]
+  "git.ignoreLimitWarning": true,
+  "cSpell.words": ["supabase", "Unranked"]
 }

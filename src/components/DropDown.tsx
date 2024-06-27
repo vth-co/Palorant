@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
-import AntDesign from '@expo/vector-icons/AntDesign';
+import Ascendant3 from './Ranks/Ascendant3';
+import Immortal3 from './Ranks/Immortal3';
+import Radiant from './Ranks/Radiant';
+import Silver3 from './Ranks/Silver3';
+import Gold3 from './Ranks/Gold3';
+import Diamond3 from './Ranks/Diamond3';
+import Platinum3 from './Ranks/Platinum3';
+import Iron3 from './Ranks/Iron3';
+import Unranked from './Ranks/Unranked';
+import Bronze3 from './Ranks/Bronze3';
 
 const data = [
-  { label: 'Item 1', value: '1' },
-  { label: 'Item 2', value: '2' },
-  { label: 'Item 3', value: '3' },
-  { label: 'Item 4', value: '4' },
-  { label: 'Item 5', value: '5' },
-  { label: 'Item 6', value: '6' },
-  { label: 'Item 7', value: '7' },
-  { label: 'Item 8', value: '8' },
+  { label: 'Radiant', value: '1', icon: <Radiant width={32} height={32} /> },
+  { label: 'Immortal', value: '2', icon: <Immortal3 width={32} height={32} /> },
+  { label: 'Ascendant', value: '3', icon: <Ascendant3 width={32} height={32} /> },
+  { label: 'Diamond', value: '4', icon: <Diamond3 width={32} height={32} /> },
+  { label: 'Platinum', value: '5', icon: <Platinum3 width={32} height={32} /> },
+  { label: 'Gold', value: '6', icon: <Gold3 width={32} height={32} /> },
+  { label: 'Silver', value: '7', icon: <Silver3 width={32} height={32} /> },
+  { label: 'Bronze', value: '8', icon: <Bronze3 width={32} height={32} /> },
+  { label: 'Iron', value: '9', icon: <Iron3 width={32} height={32} /> },
+  { label: 'Unranked', value: '10', icon: <Unranked width={32} height={32} /> },
 ];
 
 const DropdownComponent = () => {
@@ -28,6 +39,15 @@ const DropdownComponent = () => {
       );
     }
     return null;
+  };
+
+  const renderItem = (item) => {
+    return (
+      <View style={styles.item}>
+        {item.icon}
+        <Text style={[styles.itemTextStyle, { marginLeft: 10 }]}>{item.label}</Text>
+      </View>
+    );
   };
 
   return (
@@ -59,6 +79,7 @@ const DropdownComponent = () => {
           setIsFocus(false);
           setDropdownHeight(70);
         }}
+        renderItem={renderItem}
         // renderLeftIcon={() => (
         //   <AntDesign
         //     style={styles.icon}
@@ -103,6 +124,11 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 5,
   },
+  item: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+  },
   label: {
     position: 'absolute',
     backgroundColor: 'transparent',
@@ -115,6 +141,7 @@ const styles = StyleSheet.create({
   },
   placeholderStyle: {
     fontSize: 16,
+    marginLeft: 5,
     color: '#98A2B3'
   },
   selectedTextStyle: {
@@ -122,7 +149,6 @@ const styles = StyleSheet.create({
     color: '#FCFCFD',
     marginLeft: 10,
     marginTop: 15,
-
   },
   iconStyle: {
     width: 20,
