@@ -17,12 +17,13 @@ const data = [
 const DropdownComponent = () => {
   const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
+  const [dropdownHeight, setDropdownHeight] = useState(50);
 
   const renderLabel = () => {
-    if (value || isFocus) {
+    if (value ) {
       return (
-        <Text style={[styles.label, isFocus && { color: 'blue' }]}>
-          Dropdown label
+        <Text style={[styles.label, isFocus && { color: 'transparent' }]}>
+          Rank
         </Text>
       );
     }
@@ -33,17 +34,22 @@ const DropdownComponent = () => {
     <View style={styles.container}>
       {renderLabel()}
       <Dropdown
-        style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
+        style={[styles.dropdown, isFocus && { borderColor: 'transparent' }, {height: dropdownHeight}]}
         placeholderStyle={styles.placeholderStyle}
+        containerStyle={styles.containerStyle}
         selectedTextStyle={styles.selectedTextStyle}
         inputSearchStyle={styles.inputSearchStyle}
         iconStyle={styles.iconStyle}
+        itemContainerStyle={styles.itemContainerStyle}
+        itemTextStyle={styles.itemTextStyle}
         data={data}
-        search
-        maxHeight={300}
+        activeColor='#475467'
+        backgroundColor='#060a107f'
+        // search
+        maxHeight={190}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? 'Select item' : '...'}
+        placeholder={!isFocus ? 'Select your rank' : 'Select your rank'}
         searchPlaceholder="Search..."
         value={value}
         onFocus={() => setIsFocus(true)}
@@ -51,15 +57,16 @@ const DropdownComponent = () => {
         onChange={item => {
           setValue(item.value);
           setIsFocus(false);
+          setDropdownHeight(70);
         }}
-        renderLeftIcon={() => (
-          <AntDesign
-            style={styles.icon}
-            color={isFocus ? 'blue' : 'black'}
-            name="Safety"
-            size={20}
-          />
-        )}
+        // renderLeftIcon={() => (
+        //   <AntDesign
+        //     style={styles.icon}
+        //     color={isFocus ? 'blue' : 'black'}
+        //     name="Safety"
+        //     size={20}
+        //   />
+        // )}
       />
     </View>
   );
@@ -69,33 +76,53 @@ export default DropdownComponent;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
-    padding: 16,
+    marginTop: 30,
+  },
+  containerStyle: {
+    borderColor: 'black',
+    marginTop: 10,
+    borderWidth: 0.5,
+    borderRadius: 10,
+    backgroundColor: '#1D2939',
   },
   dropdown: {
     height: 50,
-    borderColor: 'gray',
+    borderColor: 'black',
     borderWidth: 0.5,
     borderRadius: 8,
     paddingHorizontal: 8,
+    backgroundColor: '#1D2939',
+  },
+  itemContainerStyle: {
+    backgroundColor: 'transparent',
+
+  },
+  itemTextStyle: {
+    color: '#FCFCFD',
   },
   icon: {
     marginRight: 5,
   },
   label: {
     position: 'absolute',
-    backgroundColor: 'white',
-    left: 22,
-    top: 8,
+    backgroundColor: 'transparent',
+    left: 10,
+    top: 15,
     zIndex: 999,
     paddingHorizontal: 8,
     fontSize: 14,
+    color: '#98A2B3',
   },
   placeholderStyle: {
     fontSize: 16,
+    color: '#98A2B3'
   },
   selectedTextStyle: {
     fontSize: 16,
+    color: '#FCFCFD',
+    marginLeft: 10,
+    marginTop: 15,
+
   },
   iconStyle: {
     width: 20,
