@@ -70,7 +70,7 @@ export default DropdownComponent;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
+    marginVertical: 8,
   },
   containerStyle: {
     borderColor: "black",
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#FCFCFD",
     marginLeft: 10,
-    marginTop: 15,
+    marginTop: 20,
   },
   iconStyle: {
     width: 20,

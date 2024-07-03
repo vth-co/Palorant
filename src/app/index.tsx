@@ -12,7 +12,7 @@ export default function App() {
   // }
 
   if (!session) {
-    return <Redirect href={'/onboard/pageHabits'} />;
+    return <Redirect href={'/onboard/pageDisplay'} />;
   }
 
   return (
