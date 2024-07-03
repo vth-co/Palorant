@@ -1,42 +1,28 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Dropdown } from "react-native-element-dropdown";
+import React, { useState } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import { MultiSelect } from 'react-native-element-dropdown';
+import { FontAwesome } from '@expo/vector-icons'; // Use an icon library for the check mark
 
-const DropdownComponent = ({ data, label, onChange, value }) => {
-  const [isFocus, setIsFocus] = useState(false);
-  const [dropdownHeight, setDropdownHeight] = useState(50);
-
-  const renderLabel = () => {
-    if (value) {
-      return (
-        <Text style={[styles.label, isFocus && { color: "transparent" }]}>
-          {label}
-        </Text>
-      );
-    }
-    return null;
-  };
+const MultiSelectComponent = ({ data, label }) => {
+  const [selected, setSelected] = useState([]);
 
   const renderItem = (item) => {
+    const isSelected = selected.includes(item.value);
+
     return (
       <View style={styles.item}>
-        {item.icon}
-        <Text style={[styles.itemTextStyle, { marginLeft: 10 }]}>
-          {item.label}
-        </Text>
+        <Text style={styles.itemTextStyle}>{item.label}</Text>
+        <View style={[styles.checkbox, isSelected && styles.checked]}>
+          {isSelected && <FontAwesome name="check" size={14} color="white" />}
+        </View>
       </View>
     );
   };
 
   return (
     <View style={styles.container}>
-      {renderLabel()}
-      <Dropdown
-        style={[
-          styles.dropdown,
-          isFocus && { borderColor: "transparent" },
-          { height: dropdownHeight },
-        ]}
+      <MultiSelect
+        style={styles.dropdown}
         placeholderStyle={styles.placeholderStyle}
         containerStyle={styles.containerStyle}
         selectedTextStyle={styles.selectedTextStyle}
@@ -44,29 +30,26 @@ const DropdownComponent = ({ data, label, onChange, value }) => {
         iconStyle={styles.iconStyle}
         itemContainerStyle={styles.itemContainerStyle}
         itemTextStyle={styles.itemTextStyle}
-        data={data}
-        activeColor="#475467"
+        activeColor="#transparent"
         backgroundColor="#060a107f"
-        maxHeight={190}
+        // search
+        data={data}
         labelField="label"
         valueField="value"
         placeholder={`${label}`}
         searchPlaceholder="Search..."
-        value={value}
-        onFocus={() => setIsFocus(true)}
-        onBlur={() => setIsFocus(false)}
-        onChange={(item) => {
-          onChange(item.value);
-          setIsFocus(false);
-          setDropdownHeight(70);
+        value={selected}
+        onChange={item => {
+          setSelected(item);
         }}
         renderItem={renderItem}
+        selectedStyle={styles.selectedStyle}
       />
     </View>
   );
 };
 
-export default DropdownComponent;
+export default MultiSelectComponent;
 
 const styles = StyleSheet.create({
   container: {
@@ -99,7 +82,19 @@ const styles = StyleSheet.create({
   item: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     padding: 10,
+  },
+  checkbox: {
+    width: 20,
+    height: 20,
+    borderWidth: 1,
+    borderColor: "#FCFCFD",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  checked: {
+    backgroundColor: "#475467",
   },
   label: {
     position: "absolute",
@@ -120,7 +115,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#FCFCFD",
     marginLeft: 10,
-    marginTop: 15,
+  },
+  selectedStyle: {
+    backgroundColor: "#344054",
+    borderRadius: 10,
+    borderColor: "transparent",
+    marginTop: 10,
   },
   iconStyle: {
     width: 20,

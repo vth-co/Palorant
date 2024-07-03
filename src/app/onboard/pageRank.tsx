@@ -238,14 +238,14 @@ const pageRank = () => {
       </Text>
       <DropdownComponent
         data={rankData}
-        label="rank"
+        label="Rank"
         onChange={handleRankChange}
         value={selectedRank}
       />
       {selectedRank && tierData[selectedRank] && (
         <DropdownComponent
           data={tierData[selectedRank]}
-          label="tier"
+          label="Tier"
           onChange={handleTierChange}
           value={selectedTier}
         />
