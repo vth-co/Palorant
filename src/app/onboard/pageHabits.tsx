@@ -120,7 +120,7 @@ const pageHabits = () => {
   return (
     <SafeAreaView className="flex-1 bg-[#101828] p-5">
       <Text className="text-white text-3xl font-bold">Gaming Habits</Text>
-      <Text className="text-secondary-400 text-xl mt-3">
+      <Text className="text-secondary-400 text-xl mt-3 mb-6">
         Tell us about how you prefer to play
       </Text>
       <DropdownComponent
@@ -135,13 +135,6 @@ const pageHabits = () => {
         onChange={handleServerChange}
         value={selectedServer}
       />
-      {/* <DropdownComponent
-        data={dayData}
-        label="I play during the..."
-        onChange={handleDayChange}
-        value={selectedDay}
-      /> */}
-
       <MultiSelectComponent
         data={dayData}
         label="I play during the..."

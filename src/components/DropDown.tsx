@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     left: 10,
     top: 15,
     zIndex: 999,
-    paddingHorizontal: 8,
+    paddingHorizontal: 4,
     fontSize: 14,
     color: "#98A2B3",
   },
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   selectedTextStyle: {
     fontSize: 16,
     color: "#FCFCFD",
-    marginLeft: 10,
+    marginLeft: 5,
     marginTop: 20,
   },
   iconStyle: {

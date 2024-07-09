@@ -8,17 +8,6 @@ const DatePickerComponent = ({ title }) => {
   const handleText = (): string =>
     pickedDate ? pickedDate.toDateString() : "Date of Birth";
 
-  //   const renderLabel = () => {
-  //     if (value) {
-  //       return (
-  //         <Text style={[styles.label, isFocus && { color: "transparent" }]}>
-  //           Date of Birth
-  //         </Text>
-  //       );
-  //     }
-  //     return null;
-  //   };
-
   return (
     <View style={styles.container}>
       {pickedDate && <Text className="text-secondary-400">{title}</Text>}
@@ -53,7 +42,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 0.5,
     borderRadius: 10,
-    paddingVertical: 10,
+    paddingVertical: 15,
     paddingHorizontal: 13,
   },
   containerStyle: {

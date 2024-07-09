@@ -53,7 +53,7 @@ export default MultiSelectComponent;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
+    marginVertical: 8,
   },
   containerStyle: {
     borderColor: "black",
