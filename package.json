@@ -43,7 +43,8 @@
     "react-native-svg": "15.2.0",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-web": "~0.19.6",
-    "react-native-woodpicker": "^0.3.17"
+    "react-native-woodpicker": "^0.3.17",
+    "expo-image-picker": "~15.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -11,9 +11,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { supabase } from "@/lib/supabase";
 import FormField from "@/components/FormField";
 import CustomButton from "@/components/CustomButton";
-import TwitterIcon from "../components/AltLoginButtons/TwitterIcon";
-import GoogleIcon from "../components/AltLoginButtons/GoogleIcon";
-import AppleIcon from "../components/AltLoginButtons/AppleIcon";
+import TwitterIcon from "../components/SVG Assets/AltLoginButtons/TwitterIcon";
+import GoogleIcon from "../components/SVG Assets/AltLoginButtons/GoogleIcon";
+import AppleIcon from "../components/SVG Assets/AltLoginButtons/AppleIcon";
 import CircleButton from "@/components/CircleButton";
 
 const SignUpScreen = () => {

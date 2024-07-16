@@ -4,11 +4,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import CustomButton from "@/components/CustomButton";
 import { router } from "expo-router";
 import CircleButton from "@/components/CircleButton";
-import ControllerSVG from "@/components/Roles/Controller";
-import DuelistSVG from "@/components/Roles/Duelist";
-import SentinelSVG from "@/components/Roles/Sentinel";
-import InitiatorSVG from "@/components/Roles/Initiator";
-import FillSVG from "@/components/Roles/Fill";
+import ControllerSVG from "@/components/SVG Assets/Roles/Controller";
+import DuelistSVG from "@/components/SVG Assets/Roles/Duelist";
+import SentinelSVG from "@/components/SVG Assets/Roles/Sentinel";
+import InitiatorSVG from "@/components/SVG Assets/Roles/Initiator";
+import FillSVG from "@/components/SVG Assets/Roles/Fill";
 
 const pageRole = () => {
 
