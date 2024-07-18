@@ -12,7 +12,7 @@ export default function App() {
   // }
 
   if (!session) {
-    return <Redirect href={'/onboard/pageProfilePicture'} />;
+    return <Redirect href={'/onboard/pageRole'} />;
   }
 
   return (
