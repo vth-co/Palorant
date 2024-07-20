@@ -9,6 +9,7 @@ import DuelistSVG from "@/components/SVG Assets/Roles/Duelist";
 import SentinelSVG from "@/components/SVG Assets/Roles/Sentinel";
 import InitiatorSVG from "@/components/SVG Assets/Roles/Initiator";
 import FillSVG from "@/components/SVG Assets/Roles/Fill";
+import Brimstone from "@/components/SVG Assets/Agents/Brimstone";
 
 const pageRole = () => {
 
@@ -24,7 +25,7 @@ const pageRole = () => {
   ];
 
   const agentButtons = {
-    Controller: ['Agent 1', 'Agent 2', 'Agent 3'],
+    Controller: [Brimstone, 'Agent 2', 'Agent 3'],
     Duelist: ['Agent 4', 'Agent 5', 'Agent 6'],
     Initiator: ['Agent 7', 'Agent 8', 'Agent 9'],
     Sentinel: ['Agent 10', 'Agent 11', 'Agent 12'],
